@@ -3,7 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/optimistdigital/nova-detached-filters.svg?style=flat-square)](https://packagist.org/packages/optimistdigital/nova-detached-filters)
 [![Total Downloads](https://img.shields.io/packagist/dt/optimistdigital/nova-detached-filters.svg?style=flat-square)](https://packagist.org/packages/optimistdigital/nova-detached-filters)
 
-This [Laravel Nova](https://nova.laravel.com/) package allows you to place filters in Nova cards detached from the filter dropdown.
+This [Laravel Nova](https://nova.laravel.com/) package allows you to place filters in Nova cards detached from the filter dropdown (forked from optimistdigital).
 
 ## Features
 
