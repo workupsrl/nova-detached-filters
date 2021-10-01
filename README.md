@@ -24,7 +24,7 @@ This [Laravel Nova](https://nova.laravel.com/) package allows you to place filte
 Install the package in a Laravel Nova project via Composer:
 
 ```bash
-composer require optimistdigital/nova-detached-filters
+composer require workup/nova-detached-filters
 ```
 
 ## Usage
@@ -32,7 +32,7 @@ composer require optimistdigital/nova-detached-filters
 Pass the filters you wish to detach from the filter menu and show on a card to `NovaDetachedFilters` class.
 
 ```php
-use OptimistDigital\NovaDetachedFilters\NovaDetachedFilters;
+use Workup\NovaDetachedFilters\NovaDetachedFilters;
 
 public function filters()
 {
@@ -62,8 +62,8 @@ protected function myFilters()
 If you only wish to show some filters on `DetachedFilters` card, you must use `HasDetachedFilters` trait.
 
 ```php
-use OptimistDigital\NovaDetachedFilters\NovaDetachedFilters;
-use \OptimistDigital\NovaDetachedFilters\HasDetachedFilters;
+use Workup\NovaDetachedFilters\NovaDetachedFilters;
+use \Workup\NovaDetachedFilters\HasDetachedFilters;
 
 class ExampleResource extends Resource
 {

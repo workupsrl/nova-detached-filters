@@ -1,6 +1,6 @@
 <?php
 
-namespace OptimistDigital\NovaDetachedFilters\Tests\Fixtures;
+namespace Workup\NovaDetachedFilters\Tests\Fixtures;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Filters\Filter;

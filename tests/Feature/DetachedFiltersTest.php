@@ -1,14 +1,14 @@
 <?php
 
-namespace OptimistDigital\NovaDetachedFilters\Tests\Feature;
+namespace Workup\NovaDetachedFilters\Tests\Feature;
 
-use OptimistDigital\NovaDetachedFilters\NovaDetachedFilters;
-use OptimistDigital\NovaDetachedFilters\Tests\Fixtures\FirstFilter;
-use OptimistDigital\NovaDetachedFilters\Tests\Fixtures\SecondFilter;
-use OptimistDigital\NovaDetachedFilters\Tests\Fixtures\ThirdFilter;
-use OptimistDigital\NovaDetachedFilters\Tests\Fixtures\User;
-use OptimistDigital\NovaDetachedFilters\Tests\Fixtures\UserResource;
-use OptimistDigital\NovaDetachedFilters\Tests\TestCase;
+use Workup\NovaDetachedFilters\NovaDetachedFilters;
+use Workup\NovaDetachedFilters\Tests\Fixtures\FirstFilter;
+use Workup\NovaDetachedFilters\Tests\Fixtures\SecondFilter;
+use Workup\NovaDetachedFilters\Tests\Fixtures\ThirdFilter;
+use Workup\NovaDetachedFilters\Tests\Fixtures\User;
+use Workup\NovaDetachedFilters\Tests\Fixtures\UserResource;
+use Workup\NovaDetachedFilters\Tests\TestCase;
 
 class DetachedFiltersTest extends TestCase
 {

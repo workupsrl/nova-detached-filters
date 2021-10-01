@@ -1,6 +1,6 @@
 <?php
 
-namespace OptimistDigital\NovaDetachedFilters;
+namespace Workup\NovaDetachedFilters;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;

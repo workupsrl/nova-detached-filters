@@ -1,10 +1,10 @@
 <?php
 
-namespace OptimistDigital\NovaDetachedFilters\Tests\Fixtures;
+namespace Workup\NovaDetachedFilters\Tests\Fixtures;
 
 use Illuminate\Http\Request;
-use OptimistDigital\NovaDetachedFilters\DetachedFilterColumn;
-use OptimistDigital\NovaDetachedFilters\NovaDetachedFilters;
+use Workup\NovaDetachedFilters\DetachedFilterColumn;
+use Workup\NovaDetachedFilters\NovaDetachedFilters;
 
 class UserWithDetachedColumn extends UserResource
 {
