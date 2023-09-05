@@ -21,18 +21,25 @@
       "role": "Developer"
     },
     {
-      "name": "Optimist Digital",
-      "email": "info@optimistdigital.com",
+      "name": "Outl1ne",
+      "email": "info@outl1ne.com",
       "role": "Maintainer"
     }
   ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://nova.laravel.com"
+    }
+  ],
   "require": {
-    "php": "^8.0",
-    "workup/nova": "^3.0"
+    "php": ">=8.0.0",
+    "laravel/nova": "~4.0"
   },
   "require-dev": {
-    "orchestra/testbench": "^6.3",
-    "phpunit/phpunit": "^9.4"
+    "laravel/pint": "^0.2.1",
+    "orchestra/testbench": "^7.0.0",
+    "phpunit/phpunit": "^9.5"
   },
   "autoload": {
     "psr-4": {

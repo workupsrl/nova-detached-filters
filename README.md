@@ -1,7 +1,7 @@
 # Nova Detached Filters
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/optimistdigital/nova-detached-filters.svg?style=flat-square)](https://packagist.org/packages/optimistdigital/nova-detached-filters)
-[![Total Downloads](https://img.shields.io/packagist/dt/optimistdigital/nova-detached-filters.svg?style=flat-square)](https://packagist.org/packages/optimistdigital/nova-detached-filters)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/outl1ne/nova-detached-filters.svg?style=flat-square)](https://packagist.org/packages/outl1ne/nova-detached-filters)
+[![Total Downloads](https://img.shields.io/packagist/dt/outl1ne/nova-detached-filters.svg?style=flat-square)](https://packagist.org/packages/outl1ne/nova-detached-filters)
 
 This [Laravel Nova](https://nova.laravel.com/) package allows you to place filters in Nova cards detached from the filter dropdown (forked from optimistdigital).
 
@@ -63,7 +63,7 @@ If you only wish to show some filters on `DetachedFilters` card, you must use `H
 
 ```php
 use Workup\NovaDetachedFilters\NovaDetachedFilters;
-use \Workup\NovaDetachedFilters\HasDetachedFilters;
+use Workup\NovaDetachedFilters\HasDetachedFilters;
 
 class ExampleResource extends Resource
 {
@@ -189,24 +189,6 @@ public function cards(Request $request)
         (new NovaDetachedFilters([
             new SelectFilter(),
         ]))->withToggle(),
-    ];
-}
-```
-
-### Per page options - NOVA <= 3.15.0
-
-Shows the `per-page` dropdown on `DetachedFilter` card. You need to pass in the `perPageOptions` defined in your resource.
-**NB: Only works with version 3.15.0 or higher of laravel/nova**
-
-Optionally you can pass in `false / true` as a second parameter to `hide / show` the `per-page` filter in dropdown menu. This will be `true` by default.
-
-```php
-public function cards(Request $request)
-{
-    return [
-        (new NovaDetachedFilters([
-            // ...
-        ]))->withPerPage($request->resource()::perPageOptions(), false),
     ];
 }
 ```
