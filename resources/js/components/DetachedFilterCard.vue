@@ -1,62 +1,64 @@
 <template>
-  <card class="flex flex-col h-auto relative o1-min-h-0">
-    <div
-      v-if="hasAnyActions"
-      class="o1-flex o1-justify-end overflow-hidden"
-      :class="{
-        'rounded-lg': isCollapsed,
-        'o1-rounded-t-lg  border-b border-gray-200 dark:border-gray-600': !isCollapsed,
-      }"
-    >
-      <ActionButton v-if="card.withReset" @click="clearAllFilters()">
-        <ResetIcon />
-      </ActionButton>
+  <div class="detached-filters-scoped">
+    <card class="flex flex-col h-auto relative min-h-0">
+      <div
+        v-if="hasAnyActions"
+        class="flex justify-end overflow-hidden p-2"
+        :class="{
+          'rounded-lg': isCollapsed,
+          'rounded-t-lg border-b border-gray-200 dark:border-gray-600': !isCollapsed,
+        }"
+      >
+        <ActionButton v-if="card.withReset" @click="clearAllFilters()">
+          <ResetIcon />
+        </ActionButton>
 
-      <ActionButton @click="toggleIsPersisting" v-if="card.persistFilters">
-        <LockIcon
-          :class="{
-            'text-green-500 opacity-100': isPersisting,
-            'text-gray-400 opacity-80 hover:opacity-100': !isPersisting,
-          }"
-        />
-      </ActionButton>
+        <ActionButton @click="toggleIsPersisting" v-if="card.persistFilters">
+          <LockIcon
+            :class="{
+              'text-green-500 opacity-100': isPersisting,
+              'text-gray-400 opacity-80 hover:opacity-100': !isPersisting,
+            }"
+          />
+        </ActionButton>
 
-      <ActionButton v-if="card.withToggle" @click="toggleIsCollapsed">
-        <CollapseIcon :class="{ 'o1-rotate-90': isCollapsed, 'o1-rotate-[270deg]': !isCollapsed }" />
-      </ActionButton>
-    </div>
-    <div class="px-3 py-4 flex flex-wrap max-h-screen opacity-100" :class="{ hidden: isCollapsed }">
-      <div class="flex flex-wrap" :class="getWidth(item)" v-for="item in card.filters" :key="item.key">
-        <!-- Single Filter -->
-        <nova-detached-filter
-          v-if="isFilterComponent(item)"
-          :width="'w-full'"
-          :filter="item"
-          :resource-name="resourceName"
-          @handle-filter-changed="handleFilterChanged"
-          @reset-filter="resetFilter"
-        />
-
-        <!-- Filter Column -->
-        <nova-detached-filter
-          v-else
-          v-for="filter in item.filters"
-          v-bind:key="filter.key"
-          :width="getWidth(filter)"
-          :filter="filter"
-          :resource-name="resourceName"
-          @handle-filter-changed="handleFilterChanged"
-          @reset-filter="resetFilter"
-        />
+        <ActionButton v-if="card.withToggle" @click="toggleIsCollapsed">
+          <CollapseIcon :class="{ 'rotate-90': isCollapsed, 'rotate-[270deg]': !isCollapsed }" />
+        </ActionButton>
       </div>
-    </div>
-  </card>
+      <div class="px-3 py-4 flex flex-wrap max-h-screen opacity-100" :class="{ hidden: isCollapsed }">
+        <div class="flex flex-wrap" :class="getWidth(item)" v-for="item in card.filters" :key="item.key">
+          <!-- Single Filter -->
+          <nova-detached-filter
+            v-if="isFilterComponent(item)"
+            :width="'w-full'"
+            :filter="item"
+            :resource-name="resourceName"
+            @handle-filter-changed="handleFilterChanged"
+            @reset-filter="resetFilter"
+          />
+
+          <!-- Filter Column -->
+          <nova-detached-filter
+            v-else
+            v-for="filter in item.filters"
+            v-bind:key="filter.key"
+            :width="getWidth(filter)"
+            :filter="filter"
+            :resource-name="resourceName"
+            @handle-filter-changed="handleFilterChanged"
+            @reset-filter="resetFilter"
+          />
+        </div>
+      </div>
+    </card>
+  </div>
 </template>
 
 <script>
-import { Filterable, RouteParameters, PerPageable, InteractsWithQueryString } from '../mixins';
+import { Filterable, InteractsWithQueryString, PerPageable, RouteParameters } from '../mixins';
 import ActionButton from './ActionButton';
-import { LockIcon, ResetIcon, CollapseIcon } from './icons';
+import { CollapseIcon, LockIcon, ResetIcon } from './icons';
 
 export default {
   mixins: [Filterable, InteractsWithQueryString, PerPageable, RouteParameters],

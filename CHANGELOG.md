@@ -24,7 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Support for Laravel Nova 4
 - Upgrade components to vue 3
-- Added tailwind with `o1-` prefix.
+- Added tailwind with `wu-` prefix.
 
 ### Changed
 

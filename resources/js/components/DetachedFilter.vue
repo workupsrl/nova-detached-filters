@@ -11,8 +11,8 @@
       @change="$emit('handle-filter-changed', filter)"
     />
 
-    <div class="absolute o1-right-3 o1-top-1 flex">
-      <ActionButton class="p-1" @click="$emit('reset-filter', filter)" v-if="filter.withReset">
+    <div class="absolute right-3 top-2 flex">
+      <ActionButton @click="$emit('reset-filter', filter)" v-if="filter.withReset">
         <ResetIcon />
       </ActionButton>
     </div>
